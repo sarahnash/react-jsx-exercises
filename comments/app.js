@@ -1,17 +1,30 @@
 let ProfilePic = () => {
-    return <span>Make this component render an image</span>
+    return <img src="comments/10897867_915888360470_6095006205638271982_n.jpg" alt="sarahs picture"></img>
 }
 
-let CommentBody = () => {
-    return <span>Make this component render a username in bold above the comment text</span>
+let CommentBody = (props) => {
+    return (
+      <div>
+      <h1>{props.name}</h1>
+      <p>Comment Text</p>
+      </div>
+    )
 }
 
-let Comment = () => {
-    return <span>Make each comment render a profile picture and the comment body</span>
+let Comment = (props) => {
+  return (<div>
+    <ProfilePic/>
+    <CommentBody name={props.name}/>
+    </div>
+  )
 }
 
 let Comments = () => {
-    return <span>Make this component render a list of comments</span>
+    return (<div>
+      <ProfilePic/>
+      <CommentBody name="Sarah"/>
+      </div>
+    )
 }
 
 ReactDOM.render(<Comments />, document.getElementById('root'))
